@@ -1,2 +1,4 @@
 .env
 venv
+exec.py
+name_amnz.csv
