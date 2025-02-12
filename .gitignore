@@ -2,3 +2,4 @@
 venv
 exec.py
 name_amnz.csv
+__pycache__

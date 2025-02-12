@@ -13,6 +13,9 @@ class DadosRepositorios:
         self.api_url = 'https://api.github.com'
     
     repos_list = []
+    repos_name = []
+    repos_language = []
+    data = None
 
     def listRepo(self):
         page = 1
@@ -24,8 +27,6 @@ class DadosRepositorios:
                 break
             page += 1
 
-    repos_name = []
-    repos_language = []
 
     def nameRepo(self):
         if len(self.repos_list) == 0:
@@ -49,7 +50,6 @@ class DadosRepositorios:
             checked = True
         return checked
 
-    data = None
 
     def createData(self):
         if self.checkRepos():
@@ -64,7 +64,3 @@ class DadosRepositorios:
             return self.data.to_csv(f'{self.owner}.csv')
         else:
             raise('O arquivo DataFrame não foi criado, tente chamar a função "createData" primeiro.')
-
-user = DadosRepositorios('leooobig')
-user.createData()
-user.createFile()
